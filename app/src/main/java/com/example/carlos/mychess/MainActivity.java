@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void llenarArregloCasillas(){
-        casillas[0][0] = (ImageView) findViewById(R.id.cf8);
+
 
 
     }
