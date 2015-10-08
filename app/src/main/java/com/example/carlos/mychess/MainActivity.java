@@ -148,7 +148,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-
+        int position[] = getPosition(v.getId());
+        if(position[0]!= -1){
+            if(origen == null){
+                origen = casillas[position[0]][position[1]];
+            }else{
+                casillas[position[0]][position[1]].setImageDrawable(origen.getDrawable());
+                origen.setImageDrawable(null);
+                origen = null;
+            }
+        }
 
 
     }
