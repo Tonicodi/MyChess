@@ -5,11 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity  {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView casillas[][] = new ImageView[8][8];
+    ImageView origen;
+    ImageView destino;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +28,7 @@ public class MainActivity extends AppCompatActivity  {
         inicializarCasillas();
         setDefaultColor();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -132,4 +143,14 @@ public class MainActivity extends AppCompatActivity  {
        }
 
     }
+
+    @Override
+    public void onClick(View v) {
+
+
+
+    }
+
+
+
 }
