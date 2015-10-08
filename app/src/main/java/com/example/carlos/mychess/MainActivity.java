@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         int position[] = getPosition(v.getId());
-        if(position[0]!= -1){
+        if(position[0]!= -1){//si el valor es negativo indica que el click no se  realizo en una casilla
             if(origen == null){
                 origen = casillas[position[0]][position[1]];
             }else{
@@ -174,19 +174,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int[]getPosition(int id){
 
-        int position[] = {-1,-1};
+        int position[] = {-1,-1};//inicialización del arreglo con valores negativos para indicar que el click no se realizó en una casilla
 
         for (int i = 0; i < 8; ++i) {
             for (int j = 0; j < 8; ++j) {
                if(id == casillas[i][j].getId()){
                    position[0] = i;
                    position[1] = j;
-                   return position;
+                   return position;//si el click fue en una casilla se retorna la posicion
                }
             }
 
         }
-        return position;
+        return position;//si el click no fue en una casilla se devuelven valores negativos en la posicion
     }
 
 
