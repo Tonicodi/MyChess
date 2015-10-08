@@ -153,9 +153,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(origen == null){
                 origen = casillas[position[0]][position[1]];
             }else{
-                casillas[position[0]][position[1]].setImageDrawable(origen.getDrawable());
-                origen.setImageDrawable(null);
-                origen = null;
+                if(casillas[position[0]][position[1]] != origen) {
+                    casillas[position[0]][position[1]].setImageDrawable(origen.getDrawable());
+                    origen.setImageDrawable(null);
+                    origen = null;
+                }
             }
         }
 
