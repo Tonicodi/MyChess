@@ -1,5 +1,6 @@
 package com.example.carlos.mychess;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,12 +14,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     ImageView casillas[][] = new ImageView[8][8];
     ImageView origen;
     ImageView destino;
-
 
 
     @Override
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         inicializarCasillas();
+        setOnclickListener();
         setDefaultColor();
     }
 
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void inicializarCasillas(){
+    private void inicializarCasillas() {
 
         casillas[0][0] = (ImageView) findViewById(R.id.a1);
         casillas[0][1] = (ImageView) findViewById(R.id.b1);
@@ -130,26 +131,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void setDefaultColor(){
+    private void setDefaultColor() {
         boolean dark = true;
-       for(int i = 0; i < 8;++i) {
-           for (int j = 0; j < 8; ++j) {
-               if (dark)
-                   casillas[i][j].setBackgroundColor(Color.GRAY);
+        for (int i = 0; i < 8; ++i) {
+            for (int j = 0; j < 8; ++j) {
+                if (dark)
+                    casillas[i][j].setBackgroundColor(Color.GRAY);
 
-               dark = !dark;
-           }
-           dark = !dark;
-       }
+                dark = !dark;
+            }
+            dark = !dark;
+        }
 
     }
 
     @Override
     public void onClick(View v) {
 
-
+        Toast.makeText(MainActivity.this, "click", Toast.LENGTH_SHORT).show();
 
     }
+    private void setOnclickListener(){
+        for (int i = 0; i < 8; ++i) {
+            for (int j = 0; j < 8; ++j) {
+               casillas[i][j].setOnClickListener(this);
+            }
+
+        }
+    }
+
 
 
 
