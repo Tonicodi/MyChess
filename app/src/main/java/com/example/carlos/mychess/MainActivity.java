@@ -148,7 +148,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        Toast.makeText(MainActivity.this, "click", Toast.LENGTH_SHORT).show();
+
+
 
     }
     private void setOnclickListener(){
@@ -158,6 +159,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
         }
+    }
+
+    private int[]getPosition(int id){
+
+        int position[] = {-1,-1};
+
+        for (int i = 0; i < 8; ++i) {
+            for (int j = 0; j < 8; ++j) {
+               if(id == casillas[i][j].getId()){
+                   position[0] = i;
+                   position[1] = j;
+                   return position;
+               }
+            }
+
+        }
+        return position;
     }
 
 
